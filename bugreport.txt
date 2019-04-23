@@ -1,0 +1,22 @@
+When I run --verbose testing/playTwo-1.in testing/playTwo-2.in, I receive the following output 
+
+[1]< # Play White against another version of myself.
+[2]< # Play Black against another version of myself.
+[1]< seed 293845
+[1]< manual Black
+[1]< auto White
+[1]< # First, get a white move and send to the other player
+[2]< seed 293845
+[2]< # Receive moves from other player and respond until someone wins.
+[2]> Amazons 61B, version 1.0
+[1]> Amazons 61B, version 1.0
+[1]> > > > > * j4-e9(a9)
+[1]< # Next, receive moves from other player and respond until someone wins.
+[2]< j4-e9(a9)
+[2]> > > > > * g10-a10(j1)
+[1]< g10-a10(j1)
+[1]> > > > * Black wins.
+[1]> > [2]> > 
+Program 1 ended with: time limit exceeded waiting for opponent
+
+The program expects a move from Program 2 but doesn't receive one, so Program 1 times out. I have been trying to debug this for a while but am lost, as I'm unable to figure out how to step by step debug this as opposed to debugging manual games which was simple. In the AG, the expected output matches my program's output - so the board is correct - but I cannot figure out why it waits for a move after declaring a winner.
